@@ -200,8 +200,8 @@
 								</h1>
 							</div>
 							<p>
-								需要募款的人可以點選<strong> <a href="#">刊登文章</a> </strong>刊登相關募款資訊，包括募款目的、聯絡資訊、募款金額等相關資訊。<br>
-								想做愛心的人可以點選<strong> <a href="#">文章資訊</a> </strong>瀏覽所有需要幫忙的文章。
+								需要募款的人可以點選<strong> <a href="post.php">刊登文章</a> </strong>刊登相關募款資訊，包括募款目的、聯絡資訊、募款金額等相關資訊。<br>
+								想做愛心的人可以點選<strong> <a href="show.php">文章資訊</a> </strong>瀏覽所有需要幫忙的文章。
 							</p>
 						</div>
 						<div class="col-md-4">
@@ -211,8 +211,8 @@
 								</h1>
 							</div>
 							<p>
-								需要招募人力的人可以點選<strong> <a href="#">刊登文章 </a></strong>刊登相關招募資訊，包括招募目的、聯絡資訊、薪水等相關資訊。<br>
-								想做愛心的人可以點選<strong> <a href="#">文章資訊 </a></strong>瀏覽所有需要幫忙的文章。
+								需要招募人力的人可以點選<strong> <a href="post.php">刊登文章 </a></strong>刊登相關招募資訊，包括招募目的、聯絡資訊、薪水等相關資訊。<br>
+								想做愛心的人可以點選<strong> <a href="show.php">文章資訊 </a></strong>瀏覽所有需要幫忙的文章。
 							</p>
 						</div>
 						<div class="col-md-4">
@@ -222,8 +222,8 @@
 								</h1>
 							</div>
 							<p>
-								有多餘物資的人可以點選<strong> <a href="#">刊登文章 </a></strong>刊登相關物資資訊，包括物資數量、聯絡資訊等相關資訊。<br>
-								有需要物資的人可以點選<strong> <a href="#">文章資訊 </a></strong>瀏覽所有捐贈物資的文章。
+								有多餘物資的人可以點選<strong> <a href="post.php">刊登文章 </a></strong>刊登相關物資資訊，包括物資數量、聯絡資訊等相關資訊。<br>
+								有需要物資的人可以點選<strong> <a href="show.php">文章資訊 </a></strong>瀏覽所有捐贈物資的文章。
 							</p>
 						</div>
 					</div>
