@@ -14,36 +14,55 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css">
-	<style>
-	input[type=text], select {
-		padding: 12px 20px;
-		margin: 0 0 15px 0;
-		display: inline-block;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-		box-sizing: border-box;
-	}
-	input[type=password], select {
-			padding: 12px 20px;
-			margin: 0 0 15px 0;
-			display: inline-block;
-			border: 1px solid #ccc;
-			border-radius: 4px;
-			box-sizing: border-box;
-	}
-	input[type=submit] {
-		background-color: #4CAF50;
-		color: white;
-		padding: 14px 20px;
-		margin: 8px 0;
-		border: none;
-		border-radius: 4px;
-		cursor: pointer;
-	}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		var register_btn_s = 0;
+		var post_btn_s = 0;
+		var show_btn_s = 0;
+		$(document).ready(function(){
+			$("#register").hide();
+			$("#post").hide();
+			$("#show").hide();
+			$("#register_btn").click(function(){
+				if(register_btn_s == 0){
+					$("#register_btn").val("收起");
+					register_btn_s = 1;
+				}
+				else{
+					$("#register_btn").val("展開");
+					register_btn_s = 0;
+				}
+				$("#register").toggle(300);
+			});
+			$("#post_btn").click(function(){
+				if(post_btn_s == 0){
+					$("#post_btn").val("收起");
+					post_btn_s = 1;
+				}
+				else{
+					$("#post_btn").val("展開");
+					post_btn_s = 0;
+				}
+				$("#post").toggle(300);
+			});
+			$("#show_btn").click(function(){
+				if(show_btn_s == 0){
+					$("#show_btn").val("收起");
+					show_btn_s = 1;
+				}
+				else{
+					$("#show_btn").val("展開");
+					show_btn_s = 0;
+				}
+				$("#show").toggle(300);
+			});
 
-	input[type=submit]:hover {
-		background-color: #45a049;
-	}
+		});
+	</script>
+	<style>
+		p{
+			font-size: 150%;
+		}
 	</style>
   </head>
   <body>
@@ -100,7 +119,7 @@
 										 <a href="#" class="dropdown-toggle" data-toggle="dropdown">常見問題<strong class="caret"></strong></a>
 										<ul class="dropdown-menu">
 											<li>
-											<a href="question.php">帳號申請</a>
+												<a href="question.php">帳號申請</a>
 											</li>
 											<li>
 												<a href="question.php">發文流程</a>
@@ -136,22 +155,43 @@
             	<div class="col-md-2">
 				</div>
 					<div class="col-md-8">
-            			<center style="border-width:3px;border-style:dashed;border-color:#FFFFFF;padding:5px;">
-             		  	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-							<form name="form" method="get" action="register_finish.php">
-								<br><br>
-								<label for="id">帳號</label><br>
-								<input type="text" id="id" name="id"> <br>
-								<label for="pw">密碼</label><br>
-								<input type="password" id="pw" name="pw"> <br>
-								<label for="pw2">確認密碼</label><br>
-								<input type="password" id="pw2" name="pw2"> <br>
-								<label for="nickname">暱稱</label><br>
-								<input type="text" id="nickname" name="nickname"> <br>
-								<input type="submit" name="button" value="確定">
-							</form>
-                       	  <p>&nbsp;</p>
-                		</center>
+            			<div style="border-width:3px;border-style:dashed;border-color:#FFFFFF;padding:10px;">
+							<h2>帳號申請: <input type="button" id="register_btn" value="展開"></input></h2>
+							<div class="row" id="register">
+								<div class="col-md-6">
+									<p>1.點擊右上角的註冊連結。</p>
+									<image src="https://imgur.com/MPTKJyj.png" width="90%" height="400px"><br>
+								</div>
+								<div class="col-md-6">
+									<p>2.正確填完所有表格後按下確定即註冊完成。</p>
+									<image src="https://imgur.com/NapP6lf.png" width="90%" height="400px">
+								</div>
+							</div>
+							<hr>
+							<h2>發文流程: <input type="button" id="post_btn" value="展開"></input></h2>
+							<div class="row" id="post">
+								<div class="col-md-6">
+									<p>1.登入後點選刊登文章。</p>
+									<image src="https://imgur.com/ggiHIVr.png" width="90%" height="400px"><br>
+								</div>
+								<div class="col-md-6">
+									<p>2.正確填完所有表格後按下確定即完成發文。</p>
+									<image src="https://i.imgur.com/soYmpKP.png" width="90%" height="400px">
+								</div>
+							</div>
+							<hr>
+							<h2>留言流程: <input type="button" id="show_btn" value="展開"></input></h2>
+							<div class="row" id="show">
+								<div class="col-md-6">
+									<p>1.未登入只能觀看文章不能留言。</p>
+									<image src="https://imgur.com/NapP6lf.png" width="90%" height="400px"><br>
+								</div>
+								<div class="col-md-6">
+									<p>2.登入後輸入留言內容按下留言便可完成留言。</p>
+									<image src="https://imgur.com/7bxJxX2.png" width="90%" height="400px">
+								</div>
+							</div>
+                		</div>
 					</div>
                	<div class="col-md-2">
 				</div>
@@ -180,3 +220,4 @@
     <script src="js/scripts.js"></script>
   </body>
 </html>
+    				

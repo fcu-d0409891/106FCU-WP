@@ -4,7 +4,7 @@
 <?php 
 $id=$_GET['id'];
 $data=mysql_query("select * from b32_21081456_guest.guest where guestID = '$id' order by guestTime desc");//讓資料由最新呈現到最舊
-$reply=mysql_query("select * from b32_21081456_guest.reply where replyWritingID = '$id' order by replyTime desc");
+$reply=mysql_query("select * from b32_21081456_guest.reply where replyWritingID = '$id' order by replyTime asc");
 ?>
 <?php
 $replyUserName=$_SESSION['username'];
@@ -123,7 +123,7 @@ if(isset($replyContent)){
 								<a href="#">粉絲頁</a> <span class="divider"></span>
 							</li>
 							<li>
-								<a href="#">聯絡我們</a> <span class="divider"></span>
+								<a href="inf.php">聯絡我們</a> <span class="divider"></span>
 							</li>
 							<ul class="nav navbar-nav navbar-right">
 								<?php
@@ -140,7 +140,7 @@ if(isset($replyContent)){
 							</ul>
 						</ul>
 						<div class="title">
-							<center><img alt="Bootstrap Image Preview" src="image/title.png"></center>
+							<center><img alt="Bootstrap Image Preview" src="https://imgur.com/n1SabPj.png" width="60%"></center>
 						</div>
 						<nav class="navbar navbar-default" role="navigation">
 							<div class="navbar-header">
@@ -161,18 +161,18 @@ if(isset($replyContent)){
 										 <a href="#" class="dropdown-toggle" data-toggle="dropdown">常見問題<strong class="caret"></strong></a>
 										<ul class="dropdown-menu">
 											<li>
-												<a href="#">帳號申請</a>
+											<a href="question.php">帳號申請</a>
 											</li>
 											<li>
-												<a href="#">求助流程</a>
+												<a href="question.php">發文流程</a>
 											</li>
 											<li>
-												<a href="#">援助流程</a>
+												<a href="question.php">留言流程</a>
 											</li>
 											<li class="divider">
 											</li>
 											<li>
-												<a href="#">站務資訊</a>
+												<a href="inf.php">站務資訊</a>
 											</li>
 										</ul>
 									</li>
@@ -275,7 +275,7 @@ if(isset($replyContent)){
 				<a href="post.php">發布文章</a>
 				<a href="show.php">瀏覽文章</a> 
 				<a href="#">粉絲頁</a> 
-				<a href="#">聯絡我們</a> <br>
+				<a href="inf.php">聯絡我們</a> <br>
 				<img src="https://imgur.com/V7bG9Wb.png">
 				<h3>Huang © 2017 Just for FCU_Demo</h3><br><br>
 			</center>

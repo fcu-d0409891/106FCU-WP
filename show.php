@@ -72,7 +72,7 @@
 								<a href="#">粉絲頁</a> <span class="divider"></span>
 							</li>
 							<li>
-								<a href="#">聯絡我們</a> <span class="divider"></span>
+								<a href="inf.php">聯絡我們</a> <span class="divider"></span>
 							</li>
 							<ul class="nav navbar-nav navbar-right">
 								<?php
@@ -89,7 +89,7 @@
 							</ul>
 						</ul>
 						<div class="title">
-							<center><img alt="Bootstrap Image Preview" src="image/title.png"></center>
+							<center><img alt="Bootstrap Image Preview" src="https://imgur.com/n1SabPj.png" width="60%"></center>
 						</div>
 						<nav class="navbar navbar-default" role="navigation">
 							<div class="navbar-header">
@@ -110,18 +110,18 @@
 										 <a href="#" class="dropdown-toggle" data-toggle="dropdown">常見問題<strong class="caret"></strong></a>
 										<ul class="dropdown-menu">
 											<li>
-												<a href="#">帳號申請</a>
+											<a href="question.php">帳號申請</a>
 											</li>
 											<li>
-												<a href="#">求助流程</a>
+												<a href="question.php">發文流程</a>
 											</li>
 											<li>
-												<a href="#">援助流程</a>
+												<a href="question.php">留言流程</a>
 											</li>
 											<li class="divider">
 											</li>
 											<li>
-												<a href="#">站務資訊</a>
+												<a href="inf.php">站務資訊</a>
 											</li>
 										</ul>
 									</li>
@@ -201,7 +201,7 @@
 				<a href="post.php">發布文章</a>
 				<a href="show.php">瀏覽文章</a> 
 				<a href="#">粉絲頁</a> 
-				<a href="#">聯絡我們</a> <br>
+				<a href="inf.php">聯絡我們</a> <br>
 				<img src="https://imgur.com/V7bG9Wb.png">
 				<h3>Huang © 2017 Just for FCU_Demo</h3><br><br>
 			</center>
