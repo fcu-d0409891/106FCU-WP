@@ -4,6 +4,18 @@
 <?php 
 $id=$_GET['id'];
 $data=mysql_query("select * from b32_21081456_guest.guest where guestID = '$id' order by guestTime desc");//讓資料由最新呈現到最舊
+$reply=mysql_query("select * from b32_21081456_guest.reply where replyWritingID = '$id' order by replyTime desc");
+?>
+<?php
+$replyUserName=$_SESSION['username'];
+$replyWritingID=$id;
+$replyContent=$_POST['replyContent'];
+$replyTime = date("Y:m:d H:i:s",time()+28800);
+if(isset($replyContent)){
+	$sql = "insert into b32_21081456_guest.reply(replyUserName,replyWritingID,replyTime,replyContent)value('$replyUserName','$replyWritingID','$replyTime','$replyContent')";
+	mysql_query($sql) or die(mysql_error());
+	echo "<script language=JavaScript> location.replace(location.href);</script>";
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
@@ -207,23 +219,47 @@ $data=mysql_query("select * from b32_21081456_guest.guest where guestID = '$id' 
 								  <td><?php echo $rs['guestSubject']?></td>
 								</tr>
 								<tr>
-								  <td width="25%">暱稱</td>
-								  <td width="75%"><?php echo $rs['guestName']?></td>
+								  <td width="15%">暱稱</td>
+								  <td width="85%" colspan="2"><?php echo $rs['guestName']?></td>
 								</tr>
 								<tr>
 								  <td>聯絡方式</td>
-								  <td><?php echo $rs['guestContact']?></td>
+								  <td colspan="2"><?php echo $rs['guestContact']?></td>
 								</tr>
 								<tr>
 								  <td>分類</td>
-								  <td><?php echo $type?></td>
+								  <td colspan="2"><?php echo $type?></td>
 								</tr>
 								<tr>
 								  <td>文章內容</td>
-								  <td><?php echo $rs['guestContent']?></td>
+								  <td colspan="2"><?php echo $rs['guestContent']?></td>
 								</tr>
+								<tr>
+								  <td colspan="3"  style='text-align: center;'>留言</td>
+								</tr>
+								<?php 
+									for($i=1;$i<=mysql_num_rows($reply);$i++){
+										$reply_rs=mysql_fetch_assoc($reply);
+								?>
+								<tr>
+								  <td><?php echo $reply_rs['replyUserName']?>:</td> <td width="50%"><?php echo $reply_rs['replyContent']?></td> <td width="25%"><?php echo $reply_rs['replyTime']?></td>
+								</tr>
+								<?php } ?>
 							</table>
+							<br><br>
 							</div>
+							<?php
+								if($_SESSION['username'] != null){
+									echo '<form id="form" name="form" method="post">';
+									echo '<p><textarea name="replyContent" id="replyContent" cols="60" rows="5" placeholder="留言內容...."></textarea></p>';
+									echo '<p><input type="submit" name="button" id="button" value="留言" /></p>';
+									echo '</form>';
+								}
+								else{
+									echo'<h2><a href="login.php">登入後才能留言(按此登入)</a></h2>';
+								}
+							?>
+							<br><br>
                 		</center>
 					</div>
                	<div class="col-md-2">
