@@ -155,43 +155,10 @@
             	<div class="col-md-2">
 				</div>
 					<div class="col-md-8">
-            			<div style="border-width:3px;border-style:dashed;border-color:#FFFFFF;padding:10px;">
-							<h2>帳號申請: <input type="button" id="register_btn" value="展開"></input></h2>
-							<div class="row" id="register">
-								<div class="col-md-6">
-									<p>1.點擊右上角的註冊連結。</p>
-									<image src="https://imgur.com/MPTKJyj.png" width="90%" height="400px"><br>
-								</div>
-								<div class="col-md-6">
-									<p>2.正確填完所有表格後按下確定即註冊完成。</p>
-									<image src="https://imgur.com/NapP6lf.png" width="90%" height="400px">
-								</div>
-							</div>
-							<hr>
-							<h2>發文流程: <input type="button" id="post_btn" value="展開"></input></h2>
-							<div class="row" id="post">
-								<div class="col-md-6">
-									<p>1.登入後點選刊登文章。</p>
-									<image src="https://imgur.com/ggiHIVr.png" width="90%" height="400px"><br>
-								</div>
-								<div class="col-md-6">
-									<p>2.正確填完所有表格後按下確定即完成發文。</p>
-									<image src="https://i.imgur.com/soYmpKP.png" width="90%" height="400px">
-								</div>
-							</div>
-							<hr>
-							<h2>留言流程: <input type="button" id="show_btn" value="展開"></input></h2>
-							<div class="row" id="show">
-								<div class="col-md-6">
-									<p>1.未登入只能觀看文章不能留言。</p>
-									<image src="https://i.imgur.com/My0Zj7s.png" width="90%" height="400px"><br>
-								</div>
-								<div class="col-md-6">
-									<p>2.登入後輸入留言內容按下留言便可完成留言。</p>
-									<image src="https://imgur.com/7bxJxX2.png" width="90%" height="400px">
-								</div>
-							</div>
-                		</div>
+            			<center style="border-width:3px;border-style:dashed;border-color:#FFFFFF;padding:10px;">
+							<h2>有任何問題請寫信至d0409891@fcu.edu.tw</h2>
+							
+                		</center>
 					</div>
                	<div class="col-md-2">
 				</div>
