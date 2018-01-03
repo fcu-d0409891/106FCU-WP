@@ -10,7 +10,8 @@ $reply=mysql_query("select * from b32_21081456_guest.reply where replyWritingID 
 $replyUserName=$_SESSION['username'];
 $replyWritingID=$id;
 $replyContent=$_POST['replyContent'];
-$replyTime = date("Y:m:d H:i:s",time()+28800);
+date_default_timezone_set("Asia/Taipei");
+$replyTime = date("Y:m:d H:i:s",time());
 if(isset($replyContent)){
 	$sql = "insert into b32_21081456_guest.reply(replyUserName,replyWritingID,replyTime,replyContent)value('$replyUserName','$replyWritingID','$replyTime','$replyContent')";
 	mysql_query($sql) or die(mysql_error());
@@ -216,7 +217,7 @@ if(isset($replyContent)){
 						<div class="CSSTableGenerator">
 							<table align="center">
 								<tr>
-								  <td><?php echo $rs['guestSubject']?></td>
+								  <td colspan="4"><?php echo $rs['guestSubject']?></td>
 								</tr>
 								<tr>
 								  <td width="15%">暱稱</td>

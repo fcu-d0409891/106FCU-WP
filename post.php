@@ -13,7 +13,8 @@ $guestType=$_GET['guestType'];
 $guestSubject=$_GET['guestSubject'];
 $guestContent=$_GET['guestContent'];
 $guestContact=$_GET['guestContact'];
-$guestTime = date("Y:m:d H:i:s",time()+28800);
+date_default_timezone_set("Asia/Taipei");
+$guestTime = date("Y:m:d H:i:s",time());
 
 if(isset($guestSubject)){
 mysql_query("set names 'utf8'");
