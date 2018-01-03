@@ -2,8 +2,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php require('Byet_Host_MySQL.php'); ?>
 <?php 
-    $sql = "select * from b32_21081456_guest.guest order by guestTime desc"; //修改成你要的 SQL 語法
+    $guestType = $_SESSION['guestType'];
+	if($_POST['guestType']!=null){
+		$guestType = $_POST['guestType'];
+	}
+	$sql = "select * from b32_21081456_guest.guest order by guestTime desc"; //修改成你要的 SQL 語法
+	if(isset($guestType)){
+		$_SESSION['guestType'] = $_POST['guestType'];
+		if($guestType == 0 || $guestType == 10){
+			$sql = "select * from b32_21081456_guest.guest order by guestTime desc"; //修改成你要的 SQL 語法
+		}
+		else{
+			$sql = "select * from b32_21081456_guest.guest where guestType = '$guestType' order by guestTime desc";
+		}
+	}
     $result = mysql_query($sql) or die("Error");
+	
+	
 
     $data_nums = mysql_num_rows($result); //統計總比數
     $per = 5; //每頁顯示項目數量
@@ -148,6 +163,19 @@
 					<div class="col-md-8">
             			<center style="border-width:3px;border-style:dashed;border-color:#FFFFFF;padding:5px;">
 						<h2>文章列表</h2>
+						<?php
+						if(($page)== 1){
+						echo '
+						<form id="form1" name="form1" method="post">
+                         	 <p style="font-size:18px">分類:
+                                 <select name="guestType" id="guestType" oninput="this.form.submit()">
+									<option value="10"  selected="selected">選單</option>
+									<option value="0">全部</option>
+                                    <option value="1">募款</option>
+                                    <option value="2">募物</option>
+                                    <option value="3">募人</option>
+                                 </select>
+						</form>';}?>
 							<table id="customers" >
 							<tr align="center">
 									<th width="5%"> 分類 </th><th width="45%"> 標題 </th><th width="10%"> 作者 </th><th width="20%"> 發文日期 </th>
